@@ -19,6 +19,7 @@ const Projects = () => {
         'Visual insights through graphs & distributions',
       ],
       tech: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'ML'],
+      link: 'https://github.com/chsrikar/Athena-AI',
     },
     {
       type: 'card',
@@ -34,6 +35,7 @@ const Projects = () => {
         'Scalable marketplace architecture',
       ],
       tech: ['LLM', 'Machine Learning', 'Backend Design'],
+      link: 'https://github.com/chsrikar/Arch-ai-model',
     },
     {
       type: 'card',
@@ -49,6 +51,7 @@ const Projects = () => {
         'Complete setup documentation on GitHub',
       ],
       tech: ['Raspberry Pi', 'OMV', 'Linux'],
+      link: 'https://github.com/chsrikar/Project-Alpha',
     },
     {
       type: 'card',
@@ -65,6 +68,7 @@ const Projects = () => {
       ],
       tech: ['Research', 'Distributed Systems', 'LLM'],
       upcoming: true,
+      link: '#',
     },
   ]
 
@@ -177,10 +181,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
       {/* Learn More Link */}
       <a
-        href="#"
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-primary text-sm flex items-center gap-2 hover:gap-3 transition-all group mt-auto"
       >
-        <span>View Details</span>
+        <span>View on GitHub</span>
         <ArrowRight
           size={16}
           className="transform -rotate-45 group-hover:scale-110 transition-transform"

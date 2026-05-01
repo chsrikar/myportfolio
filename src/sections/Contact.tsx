@@ -11,18 +11,18 @@ const Contact = () => {
   const contactMethods = [
     {
       label: 'Email',
-      value: 'srikar@example.com',
-      href: 'mailto:srikar@example.com',
+      value: 'srikarch248@gmail.com',
+      href: 'mailto:srikarch248@gmail.com',
     },
     {
       label: 'LinkedIn',
-      value: 'linkedin.com/in/srikar',
-      href: 'https://linkedin.com/in/srikar',
+      value: 'linkedin.com/in/chinthapentasrikar',
+      href: 'https://www.linkedin.com/in/chinthapentasrikar/',
     },
     {
       label: 'GitHub',
-      value: 'github.com/srikar',
-      href: 'https://github.com/srikar',
+      value: 'github.com/chsrikar',
+      href: 'https://github.com/chsrikar',
     },
   ]
 
@@ -89,7 +89,7 @@ const Contact = () => {
 
           {/* CTA Button */}
           <motion.a
-            href="mailto:srikar@example.com"
+            href="mailto:srikarch248@gmail.com"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}

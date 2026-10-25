@@ -5,14 +5,14 @@ import WordsPullUpMultiStyle from '../components/WordsPullUpMultiStyle'
 const Experience = () => {
   const experiences = [
     {
-      role: 'CEO',
+      role: 'Student Lead',
       organization: 'IEDC VISAT',
       description:
         'Leading innovation, strategy, and execution of student-driven technical initiatives.',
       current: true,
     },
     {
-      role: 'Ex-CTO',
+      role: 'Techincal Lead',
       organization: 'IEDC VISAT',
       description:
         'Headed technical development, system architecture, and project pipelines.',
@@ -30,7 +30,7 @@ const Experience = () => {
       organization: 'ADC',
       description:
         'Managing developer community, organizing events, and fostering collaboration.',
-      current: true,
+      current: false,
     },
     {
       role: 'Ex-Webmaster',
@@ -38,6 +38,13 @@ const Experience = () => {
       description:
         'Built and maintained web platforms with focus on performance and usability.',
       current: false,
+    },
+    {
+      role: 'Lead Researcher & Co-founder',
+      organization: 'Brin Research',
+      description:
+        'Co-founded Brin Research and lead research in AI and ML, guiding projects from initial ideas through prototype development and evaluation. Focus on practical and collaborative research..',
+      current: true,
     },
   ]
 

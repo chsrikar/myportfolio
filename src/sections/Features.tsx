@@ -2,6 +2,10 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Check, ArrowRight } from 'lucide-react'
 import WordsPullUpMultiStyle from '../components/WordsPullUpMultiStyle'
+import trueframeIcon from '../assets/project-icons/trueframe-pixel.png'
+import rakshakIcon from '../assets/project-icons/rakshak-pixel.png'
+import markIcon from '../assets/project-icons/mark-pixel.png'
+import adaptiveIcon from '../assets/project-icons/adaptive-pixel.png'
 
 const Projects = () => {
   const projects = [
@@ -9,65 +13,65 @@ const Projects = () => {
       type: 'card',
       number: '01',
       title: 'TRUEFRAME',
-      subtitle: 'Academic Intelligence System',
-      icon: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171918_4a5edc79-d78f-4637-ac8b-53c43c220606.png&w=1280&q=85',
+      subtitle: 'Multimodal Deepfake Detection',
+      icon: trueframeIcon,
       description:
-        'Academic prediction system estimating student performance using data-driven modeling and probabilistic simulation.',
+        'A multimodal approach to detecting manipulated and synthetic images by combining visual artifacts, frequency-domain features, and available metadata.',
       items: [
-        'Linear Regression + Monte Carlo Simulation',
-        'Predicts marks using study hours & sleep patterns',
-        'Visual insights through graphs & distributions',
+        'EfficientNet-based visual feature extraction',
+        'Error Level Analysis and frequency-domain analysis',
+        'Feature fusion for a unified trust score',
       ],
-      tech: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'ML'],
-      link: 'https://github.com/chsrikar/Athena-AI',
+      tech: ['Python', 'Deep Learning', 'Computer Vision', 'FFT'],
+      link: 'https://github.com/chsrikar/TRUEFRAME',
     },
     {
       type: 'card',
       number: '02',
-      title: 'Rakashak Credit AI',
-      subtitle: 'Architecture Discovery Platform',
-      icon: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&w=1280&q=85',
+      title: 'Rakshak Credit AI',
+      subtitle: 'Explainable Credit Intelligence',
+      icon: rakshakIcon,
       description:
-        'AI-powered platform connecting clients with architects and designers using LLM-driven recommendations.',
+        'A research-oriented credit intelligence prototype exploring cash-flow analysis, synthetic-data modeling, and evidence-grounded financial review.',
       items: [
-        'Smart matching with hybrid ML models',
-        'Heuristic ranking for optimized results',
-        'Scalable marketplace architecture',
+        'LightGBM baseline and experimental neural model',
+        'Deterministic affordability calculations',
+        'Document extraction with human-in-the-loop review',
       ],
-      tech: ['LLM', 'Machine Learning', 'Backend Design'],
-      link: 'https://github.com/chsrikar/Arch-ai-model',
+      tech: ['Python', 'LightGBM', 'FastAPI', 'LLMs'],
+      link: 'https://github.com/chsrikar/Rakshak-Credit',
     },
     {
       type: 'card',
       number: '03',
       title: 'MARK',
-      subtitle: 'Personal Cloud Infrastructure',
-      icon: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171809_f56666dc-c099-4778-ad82-9ad4f209567b.png&w=1280&q=85',
+      subtitle: 'Personal LLM Built from Scratch',
+      icon: markIcon,
       description:
-        'Self-hosted NAS system built with Raspberry Pi for centralized data management and personal cloud storage.',
+        'A custom decoder-only Transformer language model with a complete tokenizer, data preparation, training, and generation pipeline.',
       items: [
-        'Built with Raspberry Pi + OpenMediaVault',
-        'Secure and scalable architecture',
-        'Complete setup documentation on GitHub',
+        'Byte-level BPE tokenization',
+        'RoPE, RMSNorm, SwiGLU and tied embeddings',
+        'Custom pretraining pipeline and interactive Web Studio',
       ],
-      tech: ['Raspberry Pi', 'OMV', 'Linux'],
-      link: 'https://github.com/chsrikar/Project-Alpha',
+      tech: ['PyTorch', 'Transformers', 'RoPE', 'BPE'],
+      link: 'https://github.com/chsrikar/mark',
     },
     {
       type: 'card',
       number: '04',
-      title: "Adaptive Intelligence Framework for LLM's in Resource Constraint Device",
-      subtitle: 'Research Initiative',
-      icon: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&w=1280&q=85',
+      title: 'Adaptive Intelligence Framework',
+      subtitle: 'Ongoing Research Initiative',
+      icon: adaptiveIcon,
       description:
-        'Research exploring distributed architectures for LLMs using chunk-based processing inspired by torrent systems.',
+        'Exploring adaptive LLM execution under resource constraints, focusing on how compute, memory, and execution strategies influence inference efficiency.',
       items: [
-        'Model chunking & distributed inference',
-        'Parallel processing of LLM components',
-        'Scalable AI infrastructure design',
+        'Resource-aware model execution',
+        'Adaptive computation and inference strategies',
+        'Evaluation of latency, memory, and CPU utilization',
       ],
-      tech: ['Research', 'Distributed Systems', 'LLM'],
-      upcoming: true,
+      tech: ['LLM Systems', 'Systems Research', 'Optimization'],
+      ongoing: true,
       link: '#',
     },
   ]
@@ -128,11 +132,11 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     >
       {/* Top Section */}
       <div>
-        {/* Upcoming Badge */}
-        {project.upcoming && (
+        {/* Status Badge */}
+        {(project.ongoing || project.upcoming || project.badge) && (
           <div className="inline-block mb-3">
             <span className="text-[10px] px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30">
-              Upcoming Research
+              {project.badge || (project.ongoing ? 'Ongoing' : 'Upcoming Research')}
             </span>
           </div>
         )}
@@ -141,7 +145,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         <img
           src={project.icon}
           alt=""
-          className="w-10 h-10 sm:w-12 sm:h-12 rounded mb-3"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded mb-3 [image-rendering:pixelated]"
         />
 
         {/* Title with Number */}

@@ -183,18 +183,20 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </div>
 
       {/* Learn More Link */}
-      <a
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary text-sm flex items-center gap-2 hover:gap-3 transition-all group mt-auto"
-      >
-        <span>View on GitHub</span>
-        <ArrowRight
-          size={16}
-          className="transform -rotate-45 group-hover:scale-110 transition-transform"
-        />
-      </a>
+      {project.link !== '#' && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary text-sm flex items-center gap-2 hover:gap-3 transition-all group mt-auto"
+        >
+          <span>View on GitHub</span>
+          <ArrowRight
+            size={16}
+            className="transform -rotate-45 group-hover:scale-110 transition-transform"
+          />
+        </a>
+      )}
     </motion.div>
   )
 }

@@ -44,7 +44,7 @@ const Contact = () => {
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: '-100px' }}
           transition={{
             duration: 0.6,
             ease: [0.22, 1, 0.36, 1],
@@ -67,7 +67,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, margin: '-100px' }}
                 transition={{
                   duration: 0.5,
                   delay: index * 0.1,
@@ -92,7 +92,7 @@ const Contact = () => {
             href="mailto:srikarch248@gmail.com"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: '-100px' }}
             transition={{
               duration: 0.6,
               delay: 0.4,
@@ -112,7 +112,7 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: '-100px' }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-12 text-gray-500 text-sm"
         >

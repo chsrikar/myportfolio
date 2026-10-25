@@ -133,7 +133,6 @@ interface SkillCardProps {
 const SkillCard = ({ title, index, children }: SkillCardProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, {
-    once: true,
     margin: '-100px',
   })
 

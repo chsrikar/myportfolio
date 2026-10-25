@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useScroll } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import WordsPullUpMultiStyle from '../components/WordsPullUpMultiStyle'
 import AnimatedLetter from '../components/AnimatedLetter'
 
@@ -36,7 +36,13 @@ const About = () => {
   return (
     <section id="about" className="bg-black py-20 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-[#101010] rounded-3xl p-8 md:p-16 text-center">
+        <motion.div
+          initial={{ y: 24, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: false, margin: '-100px' }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="bg-[#101010] rounded-3xl p-8 md:p-16 text-center"
+        >
           <div className="text-primary text-[10px] sm:text-xs mb-8 uppercase tracking-wider">
             About Me
           </div>
@@ -63,18 +69,26 @@ const About = () => {
           </div>
 
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {interests.map((interest) => (
-              <div
+            {interests.map((interest, index) => (
+              <motion.div
                 key={interest}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: false, margin: '-100px' }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="bg-black/50 rounded-2xl p-6 border border-primary/10 hover:border-primary/30 transition-colors"
               >
                 <p className="text-primary text-sm font-medium">
                   {interest}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

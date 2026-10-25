@@ -82,7 +82,7 @@ interface ExperienceCardProps {
 
 const ExperienceCard = ({ experience, index }: ExperienceCardProps) => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const isInView = useInView(ref, { margin: '-100px' })
 
   return (
     <motion.div

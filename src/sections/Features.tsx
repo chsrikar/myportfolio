@@ -72,7 +72,6 @@ const Projects = () => {
       ],
       tech: ['LLM Systems', 'Systems Research', 'Optimization'],
       ongoing: true,
-      link: '#',
     },
   ]
 
@@ -116,7 +115,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const isInView = useInView(ref, { margin: '-100px' })
 
   return (
     <motion.div

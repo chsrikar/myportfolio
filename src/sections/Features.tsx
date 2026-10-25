@@ -183,7 +183,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </div>
 
       {/* Learn More Link */}
-      {project.link !== '#' && (
+      {project.link && project.link !== '#' && (
         <a
           href={project.link}
           target="_blank"
